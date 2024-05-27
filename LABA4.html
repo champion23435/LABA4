@@ -1,34 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="LABA4.css">
-</head>
-<body>
-    <div class="calculator">
-        <div class="display">0</div>
-        <div class="buttons">
-            <button class="button">AC</button>
-            <button class="button">+/-</button>
-            <button class="button">%</button>
-            <button class="button operator">÷</button>
-            <button class="button">7</button>
-            <button class="button">8</button>
-            <button class="button">9</button>
-            <button class="button operator">×</button>
-            <button class="button">4</button>
-            <button class="button">5</button>
-            <button class="button">6</button>
-            <button class="button operator">-</button>
-            <button class="button">1</button>
-            <button class="button">2</button>
-            <button class="button">3</button>
-            <button class="button operator">+</button>
-            <button class="button zero">0</button>
-            <button class="button">,</button>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <title>Лаба 4: складна розмітка (Flexbox)</title>
+
+        <link rel="stylesheet" href="..LABA4.css">
+
+        <style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calc {
+    width: 295px;
+    height: 480px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #FFF;
+    color: #000;
+    border: 1px solid #888;
+    box-shadow: 0px 0px 35px 4px #00000064;
+    padding: 1px;
+}
+
+#calc-titlebar {
+    align-self: end;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.calc-titlebar-button {
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+
+    margin: 4px;
+    font-size: 1em;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.calc-titlebar-button:hover {
+    background: #F21010;
+    color: #FFF;
+}
+
+.calc-titlebar-button:active {
+    background: #BF0D0D;
+    color: #FFF;
+}
+
+.calc-result {
+    text-align: right;
+    font-size: 2.5em;
+    padding: 0 6px;
+}
+
+.calc-buttons {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.calc-buttons-row {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+
+.calc-button {
+    appearance: none;
+    border: none;
+
+    flex: 1 1 25%;
+
+    font-size: 1.5em;
+    
+    background: var(--calc-button-bg);
+    color: var(--calc-button-fg);
+}
+
+.calc-button-2 {
+    flex: 2 0 50%;
+}
+
+.calc-button:hover {
+    background: var(--calc-button-hover-bg);
+    color: var(--calc-button-hover-fg);
+}
+
+.calc-button:active {
+    background: var(--calc-button-active-bg);
+    color: var(--calc-button-active-fg);
+}
+
+.calc-button {
+    --calc-button-bg: #CFCFCF;
+    --calc-button-fg: #000;
+    --calc-button-hover-bg: #D64DD3;
+    --calc-button-hover-fg: #FFF;
+    --calc-button-active-bg: #AF38AD;
+    --calc-button-active-fg: #FFF;
+}
+
+.calc-button-top {
+    --calc-button-bg: #5B5B5B;
+    --calc-button-fg: #FFF;
+}
+
+.calc-button-last {
+    --calc-button-bg: #FC922F;
+    --calc-button-fg: #000;
+}
+        </style>
+    </head>
+
+    <body>
+        <div id="calc">
+            <div id="calc-titlebar">
+                <button class="calc-titlebar-button">❌︎</button>
+            </div>
+
+            <div class="calc-result">3.14159</div>
+
+            <div class="calc-buttons">
+                <div class="calc-buttons-row">
+                    <button class="calc-button calc-button-top">AC</button>
+                    <button class="calc-button calc-button-top">±</button>
+                    <button class="calc-button calc-button-top">%</button>
+                    <button class="calc-button calc-button-last">÷</button>
+                </div>
+                <div class="calc-buttons-row">
+                    <button class="calc-button">7</button>
+                    <button class="calc-button">8</button>
+                    <button class="calc-button">9</button>
+                    <button class="calc-button calc-button-last">×</button>
+                </div>
+                <div class="calc-buttons-row">
+                    <button class="calc-button">4</button>
+                    <button class="calc-button">5</button>
+                    <button class="calc-button">6</button>
+                    <button class="calc-button calc-button-last">-</button>
+                </div>
+                <div class="calc-buttons-row">
+                    <button class="calc-button">1</button>
+                    <button class="calc-button">2</button>
+                    <button class="calc-button">3</button>
+                    <button class="calc-button calc-button-last">+</button>
+                </div>
+                <div class="calc-buttons-row">
+                    <button class="calc-button calc-button-2">0</button>
+                    <button class="calc-button">,</button>
+                    <button class="calc-button calc-button-last">=</button>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
